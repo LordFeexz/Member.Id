@@ -31,6 +31,15 @@ class Controller {
 
   static async register(req, res, next) {
     try {
+      const { username, email, password } = req.body;
+
+      await User.create({
+        username,
+        email,
+        password,
+      });
+
+      res.status(201).json({ message: "success register" });
     } catch (err) {
       next(err);
     }
