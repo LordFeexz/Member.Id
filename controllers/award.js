@@ -1,5 +1,5 @@
 const { Op } = require("sequelize");
-const { Award } = require("../models/award");
+const { Award } = require("../models");
 
 class Controller {
   static async getAllData(req, res, next) {
