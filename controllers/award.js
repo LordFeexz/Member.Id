@@ -27,13 +27,15 @@ class Controller {
         };
       }
 
-      if (minPoin) {
+      if (minPoin && maxPoin) {
+        option.where.poin = {
+          [Op.between]: [minPoin, maxPoin],
+        };
+      } else if (minPoin) {
         option.where.poin = {
           [Op.gte]: minPoin,
         };
-      }
-
-      if (maxPoin) {
+      } else if (maxPoin) {
         option.where.poin = {
           [Op.lte]: maxPoin,
         };
