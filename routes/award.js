@@ -15,4 +15,6 @@ router.get("/:id", Controller.getDataById);
 
 router.put("/:id", Controller.editData);
 
+router.delete("/:id", Controller.deleteData);
+
 module.exports = router;

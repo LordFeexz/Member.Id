@@ -92,6 +92,20 @@ class Controller {
       next(err);
     }
   }
+
+  static async deleteData(req, res, next) {
+    try {
+      const { id } = req.params;
+
+      const data = await Award.destroy({ where: { id } });
+
+      if (!data) throw { name: "failed update" };
+
+      res.status(200).json({ message: "success delete" });
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = Controller;
