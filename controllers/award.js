@@ -64,6 +64,18 @@ class Controller {
       next(err);
     }
   }
+
+  static async createData(req, res, next) {
+    try {
+      const { type, poin, name } = req.body;
+
+      await Award.create({ type, poin, name });
+
+      res.status(201).json({ message: "success create" });
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = Controller;
