@@ -63,6 +63,18 @@ class Controller {
       next(err);
     }
   }
+
+  static async delete(req, res, next) {
+    try {
+      const { id } = req.user;
+
+      await User.destroy({ where: { id } });
+
+      res.status(200).json({ message: "success delete" });
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = Controller;

@@ -11,6 +11,8 @@ router.patch("/", Controller.changePassword);
 
 router.put("/", Controller.editData);
 
+router.delete("/", Controller.delete);
+
 router.get("/:id", Controller.getUserById);
 
 module.exports = router;
