@@ -7,4 +7,8 @@ router.use(authentication);
 
 router.get("/", Controller.getAllData);
 
+//additional methods that can be used with postman
+
+router.get("/:id", Controller.getDataById);
+
 module.exports = router;

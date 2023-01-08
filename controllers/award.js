@@ -50,6 +50,20 @@ class Controller {
       next(err);
     }
   }
+
+  static async getDataById(req, res, next) {
+    try {
+      const { id } = req.params;
+
+      const data = await Award.findOne({ where: { id } });
+
+      if (!data) throw { name: "Data not found" };
+
+      res.status(200).json(data);
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = Controller;
