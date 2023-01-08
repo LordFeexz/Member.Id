@@ -13,4 +13,6 @@ router.post("/", Controller.createData);
 
 router.get("/:id", Controller.getDataById);
 
+router.put("/:id", Controller.editData);
+
 module.exports = router;

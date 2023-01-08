@@ -76,6 +76,22 @@ class Controller {
       next(err);
     }
   }
+
+  static async editData(req, res, next) {
+    try {
+      const { id } = req.params;
+
+      const { type, poin, name } = req.body;
+
+      const data = await Award.update({ type, poin, name }, { where: { id } });
+
+      if (!data) throw { name: "failed update" };
+
+      res.status(201).json({ message: "success update" });
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = Controller;
