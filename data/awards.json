@@ -1,0 +1,72 @@
+[
+  {
+    "type": "Voucher",
+    "poin": 10000,
+    "name": "Gift Card"
+  },
+  {
+    "type": "Voucher",
+    "poin": 12000,
+    "name": "Gift Card"
+  },
+  {
+    "type": "Voucher",
+    "poin": 14000,
+    "name": "Gift Card"
+  },
+  {
+    "type": "Voucher",
+    "poin": 18000,
+    "name": "Gift Card"
+  },
+  {
+    "type": "Voucher",
+    "poin": 20000,
+    "name": "Gift Card"
+  },
+  {
+    "type": "Product",
+    "poin": 50000,
+    "name": "Old Fashion Cake"
+  },
+  {
+    "type": "Product",
+    "poin": 50000,
+    "name": "New Trends Fashion"
+  },
+  {
+    "type": "Product",
+    "poin": 55000,
+    "name": "Earth Fashion"
+  },
+  {
+    "type": "Product",
+    "poin": 55000,
+    "name": "Ocean Fashion"
+  },
+  {
+    "type": "Product",
+    "poin": 60000,
+    "name": "Forest Fashion"
+  },
+  {
+    "type": "In-Game Items",
+    "poin": 5000,
+    "name": "100 Diamonds"
+  },
+  {
+    "type": "In-Game Items",
+    "poin": 10000,
+    "name": "Elite Skins"
+  },
+  {
+    "type": "In-Game Items",
+    "poin": 1000,
+    "name": "Chest Box"
+  },
+  {
+    "type": "In-Game Items",
+    "poin": 8000,
+    "name": "1 X Gatcha"
+  }
+]

@@ -20,6 +20,11 @@ const errorHandler = (err, req, res, next) => {
   } else if (err.name == `invalid token` || err.name == `JsonWebTokenError`) {
     status = 401;
     message = `Invalid Token`;
+  } else if (err.name === "Data not found") {
+    status = 404;
+    message = err.name;
+  } else if (err.name === "failed update") {
+    status = 501;
   }
   res.status(status).json({ message });
 };
