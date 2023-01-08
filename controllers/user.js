@@ -1,3 +1,4 @@
+const { compare } = require("../helpers/bcrypt");
 const { User } = require("../models");
 
 class Controller {
@@ -22,6 +23,26 @@ class Controller {
       if (!user) throw { name: "Data not found" };
 
       res.status(200).json(user);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  static async changePassword(req, res, next) {
+    try {
+      const { id } = req.user;
+
+      const { password, currentPassword } = req.body;
+
+      const user = await User.findOne({ where: { id } });
+
+      const validate = compare(currentPassword, user.password);
+
+      if (!validate) throw { name: "invalid password" };
+
+      await User.update({ password }, { where: { id } });
+
+      res.status(201).json({ message: "success change password" });
     } catch (err) {
       next(err);
     }

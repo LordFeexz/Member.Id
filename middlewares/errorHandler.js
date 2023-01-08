@@ -25,6 +25,9 @@ const errorHandler = (err, req, res, next) => {
     message = err.name;
   } else if (err.name === "failed update") {
     status = 501;
+  } else if (err.name === "invalid password") {
+    status = 401;
+    message = err.name;
   }
   res.status(status).json({ message });
 };
